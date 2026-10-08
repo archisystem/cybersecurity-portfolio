@@ -1,0 +1,1 @@
+0 0 * * * /usr/sbin/logwatch --detail High --range yesterday --service All --mailto student@example.com

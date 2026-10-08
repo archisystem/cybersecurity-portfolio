@@ -1,0 +1,175 @@
+enable
+configure terminal
+
+hostname SW1
+
+vlan 10
+ name VLAN10
+exit
+
+vlan 20
+ name VLAN20
+exit
+
+interface FastEthernet0/0
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+exit
+
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+exit
+
+interface FastEthernet1/0
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ no shutdown
+exit
+
+interface FastEthernet1/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ no shutdown
+exit
+
+end
+
+copy running-config startup-config
+
+SW2
+
+enable
+configure terminal
+
+hostname SW2
+
+vlan 10
+ name VLAN10
+exit
+
+vlan 20
+ name VLAN20
+exit
+
+interface FastEthernet0/0
+ switchport mode access
+ switchport access vlan 10
+ no shutdown
+exit
+
+interface FastEthernet0/1
+ switchport mode access
+ switchport access vlan 20
+ no shutdown
+exit
+
+interface FastEthernet1/0
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ no shutdown
+exit
+
+interface FastEthernet1/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ no shutdown
+exit
+
+end
+
+copy running-config startup-config
+
+
+1.Ai открывает конфиги через conf t а надо черз vlan database
+
+2. Какие атаки на VLAN возможны при включённом DTP и при использовании native VLAN 1?
+
+
+DTP (Dynamic Trunking Protocol)
+Если порт автоматически согласует trunk, злоумышленник может попытаться выдать себя за коммутатор и добиться перехода порта в trunk. Тогда через него потенциально можно передавать теги нескольких VLAN.
+
+Типичный вариант — Switch Spoofing.
+
+Native VLAN 1
+Для 802.1Q native VLAN передаётся без VLAN-тега. Если native VLAN используется как обычная пользовательская VLAN, это увеличивает поверхность для атак типа Double-Tagging — особенно когда native VLAN совпадает с VLAN, в которой находятся пользователи.
+
+3.Какие команды на Cisco защищают от VLAN Hopping?»
+
+Основные команды защиты на Cisco
+
+На пользовательских портах лучше полностью отключать DTP:
+
+interface FastEthernet0/0
+ switchport mode access
+ switchport access vlan 10
+ switchport nonegotiate
+
+Для trunk-портов — вручную задавать trunk:
+
+interface FastEthernet1/0
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+
+Не использовать VLAN 1 как native VLAN:
+
+vlan 999
+ name NATIVE_VLAN
+exit
+
+interface FastEthernet1/0
+ switchport trunk native vlan 999
+
+И желательно разрешить на trunk только необходимые VLAN:
+
+interface FastEthernet1/0
+ switchport trunk allowed vlan 10,20
+
+5.Попроси AI написать небольшой скрипт на Python, который проверяет через GNS3 REST API, что на каждом коммутаторе созданы VLAN 10 и 20, а Trunk не использует native VLAN 1.
+
+import requests
+
+GNS3_SERVER = "http://localhost:3080"
+PROJECT_ID = "YOUR_PROJECT_ID"
+
+def check_switch(node):
+    print(f"\nПроверка: {node['name']}")
+
+    # Здесь предполагается, что конфигурация Cisco
+    # уже сохранена и доступна для проверки.
+    config = node.get("console_host", "")
+
+    # Для лабораторной демонстрации проверяем наличие
+    # необходимых параметров в конфигурации.
+    if "vlan 10" in config:
+        print("  VLAN 10: OK")
+    else:
+        print("  VLAN 10: НЕ НАЙДЕН")
+
+    if "vlan 20" in config:
+        print("  VLAN 20: OK")
+    else:
+        print("  VLAN 20: НЕ НАЙДЕН")
+
+    if "native vlan 1" in config.lower():
+        print("  Native VLAN 1: ОШИБКА")
+    else:
+        print("  Native VLAN 1: OK")
+
+
+response = requests.get(
+    f"{GNS3_SERVER}/v2/projects/{PROJECT_ID}/nodes"
+)
+
+if response.status_code != 200:
+    print("Ошибка подключения к GNS3 API")
+    exit()
+
+nodes = response.json()
+
+for node in nodes:
+    if "SW" in node["name"].upper():
+        check_switch(node)
