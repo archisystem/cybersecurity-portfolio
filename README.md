@@ -1,49 +1,72 @@
 # 🛡️ Cybersecurity Portfolio
 
-Практическое портфолио по **кибербезопасности, сетям и Linux**.
-
-Здесь собраны учебные лабораторные работы и собственные практические проекты, выполненные в процессе обучения. Основной упор — на понимание того, как работают сети, протоколы, маршрутизация, сетевой трафик и базовые механизмы защиты Linux-систем.
-
----
-
 ## 👨‍💻 About Me
 
-Я развиваюсь в направлении **Cybersecurity** и постепенно перехожу от изучения теории к практической работе.
+Hi! I'm Artur, a Cybersecurity student currently building my practical skills through hands-on labs, networking exercises, Linux security tasks, traffic analysis, and security-oriented programming.
 
-В процессе обучения работаю с:
+I'm currently focused on developing a strong foundation in **networking, Linux, cybersecurity fundamentals, and practical security analysis**.
 
-* Linux
-* Computer Networking
-* TCP/IP
-* Cisco IOS
-* GNS3
-* Wireshark
-* Scapy
-* Bash
-* SSH
-* iptables
-* Git
-
-Основная цель — развивать практические навыки анализа сетей, поиска проблем и понимания механизмов атак и защиты.
+> 🎯 My goal is to gain real-world cybersecurity experience and continue developing toward a professional cybersecurity career.
 
 ---
 
-## 🔐 Cybersecurity Skills
+## 🧠 Current Focus
 
-### Networking
+* 🌐 Computer Networking
+* 🔐 Cybersecurity Fundamentals
+* 🐧 Linux Security
+* 🔎 Network Traffic Analysis
+* 🦈 Wireshark
+* 🐍 Python & Scapy
+* 🖥️ Cisco Networking
+* 🧪 Practical Security Labs
+* 🛠️ Bash & Linux Administration
 
-* OSI / TCP-IP
-* IP addressing
+---
+
+## 📚 Portfolio
+
+### 🌐 01 — Networking Basics
+
+Fundamentals of computer networking and network communication.
+
+**Topics:**
+
 * ARP
+* IP
+* Multicast
+* Network traffic analysis
+* GNS3
+* Packet captures
+
+➡️ [Open Networking Basics](./01-networking-basics/)
+
+---
+
+### 🔌 02 — Networking Protocols
+
+Practical work with common network protocols and services.
+
+**Topics:**
+
 * DHCP
 * DNS
 * NTP
 * SSH
-* TCP / UDP
-* Static routing
-* Multicast
+* Static Routing
+* Packet analysis
+* GNS3
+* Wireshark
 
-### Switching & Routing
+➡️ [Open Networking Protocols](./02-networking-protocols/)
+
+---
+
+### 🔀 03 — Switching & Routing
+
+Practical Cisco networking laboratories.
+
+**Topics:**
 
 * VLAN
 * Trunking
@@ -51,188 +74,164 @@
 * OSPF
 * HSRP
 * Cisco IOS
-* Network troubleshooting
+* GNS3
 
-### Traffic Analysis
+➡️ [Open Switching & Routing](./03-switching-routing/)
+
+---
+
+### 🦈 04 — Wireshark & Scapy
+
+Practical network traffic analysis and packet manipulation.
+
+**Topics:**
 
 * Wireshark
 * PCAP / PCAPNG analysis
-* SMB traffic analysis
-* Reverse shell traffic analysis
-* Packet inspection
-* Network artefact analysis
+* Scapy
+* Traffic investigation
+* Network troubleshooting
+* Python
 
-### Linux Security
+➡️ [Open Wireshark & Scapy](./04-wireshark-scapy/)
 
+---
+
+### 🐧 05 — Linux Security
+
+Practical Linux administration and security exercises.
+
+**Topics:**
+
+* Bash scripting
 * Linux administration
-* Bash scripting
-* SSH configuration
-* Public-key authentication
-* User and group management
-* File permissions
-* sudo configuration
-* iptables
-* Cron / Logwatch
-* Basic service configuration
-
-### Programming & Tools
-
-* Python
-* Scapy
-* Bash
-* Git
-* GitHub
-
----
-
-# 📂 Portfolio
-
-## 01 — Networking Basics
-
-Основы компьютерных сетей и анализ сетевого взаимодействия.
-
-**Topics:**
-
-* ARP
-* IP
-* Multicast
-* Packet capture
-* Basic network analysis
-* GNS3
-
-[Open project →](./01-networking-basics/)
-
----
-
-## 02 — Networking Protocols
-
-Практическая работа с основными сетевыми протоколами.
-
-**Topics:**
-
-* DHCP
-* DNS
-* NTP
 * SSH
-* Static routing
-* PCAP analysis
-
-[Open project →](./02-networking-protocols/)
-
----
-
-## 03 — Switching & Routing
-
-Практика построения и настройки сетевой инфраструктуры в GNS3.
-
-**Topics:**
-
-* VLAN
-* Trunk
-* EtherChannel
-* OSPF
-* HSRP
-* Cisco IOS
-* Network redundancy
-* Routing troubleshooting
-
-[Open project →](./03-switching-routing/)
-
----
-
-## 04 — Wireshark & Scapy
-
-Практический анализ сетевого трафика и создание сетевых пакетов.
-
-**Topics:**
-
-* SMB traffic analysis
-* SMB 3.1.1
-* Session analysis
-* Reverse shell investigation
-* TCP traffic
-* PCAP / PCAPNG
-* Python
-* Scapy
-
-В проекте присутствуют реальные учебные дампы трафика и результаты их анализа.
-
-[Open project →](./04-wireshark-scapy/)
-
----
-
-## 05 — Linux Security
-
-Практические задания по администрированию и базовой защите Linux.
-
-**Topics:**
-
-* Bash scripting
-* System information gathering
-* Processes and open ports
-* Linux users and groups
-* File permissions
-* sudo
-* Apache
+* iptables
 * Cron
-* Logwatch
 * Postfix
-* SSH
-* Public-key authentication
-* iptables
+* System information gathering
+* Security configuration
 
-[Open project →](./05-linux-security/)
+➡️ [Open Linux Security](./05-linux-security/)
 
 ---
 
-# 🧰 Environment
+## 🛠️ Technologies & Tools
 
-Основная среда обучения:
+| Category        | Technologies                       |
+| --------------- | ---------------------------------- |
+| Networking      | TCP/IP, ARP, DHCP, DNS, NTP, SSH   |
+| Routing         | Static Routing, OSPF               |
+| Switching       | VLAN, Trunking, EtherChannel, HSRP |
+| Security        | Linux Security, iptables, SSH      |
+| Analysis        | Wireshark, PCAP, PCAPNG            |
+| Programming     | Python, Scapy, Bash                |
+| Networking Labs | Cisco IOS, GNS3                    |
+| Version Control | Git, GitHub                        |
+
+---
+
+## 🧪 Practical Approach
+
+I focus on learning through hands-on practice rather than theory alone.
+
+My labs include:
 
 ```text
-OS        Ubuntu Linux
-Network   GNS3
-Analysis  Wireshark
-Packets   Scapy
-Language  Python / Bash
-Version   Git / GitHub
+Configure
+   ↓
+Capture traffic
+   ↓
+Analyze packets
+   ↓
+Troubleshoot
+   ↓
+Document findings
+   ↓
+Repeat
+```
+
+This portfolio is continuously updated as I learn new technologies and complete new cybersecurity projects.
+
+---
+
+## 🚀 Current Goals
+
+* Strengthen networking fundamentals
+* Improve Linux security skills
+* Develop practical cybersecurity knowledge
+* Learn more about network security
+* Improve Python and security automation skills
+* Practice traffic analysis
+* Build more security-focused projects
+* Prepare for a professional cybersecurity role
+
+---
+
+## 📈 Learning Journey
+
+```text
+Networking
+    │
+    ├── TCP/IP
+    ├── ARP
+    ├── DHCP
+    ├── DNS
+    └── NTP
+          │
+          ▼
+Switching & Routing
+    │
+    ├── VLAN
+    ├── Trunk
+    ├── EtherChannel
+    ├── OSPF
+    └── HSRP
+          │
+          ▼
+Traffic Analysis
+    │
+    ├── Wireshark
+    ├── PCAP
+    └── Scapy
+          │
+          ▼
+Linux Security
+    │
+    ├── Bash
+    ├── SSH
+    ├── iptables
+    └── System Administration
+          │
+          ▼
+      Cybersecurity
 ```
 
 ---
 
-# 🚀 Personal Project
+## 📂 Repository Structure
 
-Отдельно разрабатываю собственный учебный проект **Cyber Trainer** — терминальное приложение для изучения основ кибербезопасности и практики.
-
-Проект развивается независимо от данного учебного портфолио.
-
----
-
-# 🎯 Current Focus
-
-Сейчас основной фокус:
-
-* Network Security
-* Linux Security
-* Network Traffic Analysis
-* Incident Investigation
-* Cybersecurity fundamentals
-* Practical labs
-* CTF / Hackathon preparation
+```text
+cybersecurity-portfolio/
+│
+├── 01-networking-basics/
+├── 02-networking-protocols/
+├── 03-switching-routing/
+├── 04-wireshark-scapy/
+├── 05-linux-security/
+│
+├── .gitignore
+└── README.md
+```
 
 ---
 
-## 📈 Learning Approach
+## 🔗 Links
 
-Главный принцип этого портфолио:
-
-> **Learn → Build → Analyze → Troubleshoot → Document**
-
-Я стараюсь не только изучать команды и определения, но и понимать, **почему система работает именно так, что происходит при ошибке и как найти причину проблемы**.
+* 💻 GitHub: [@archisystem](https://github.com/archisystem)
+* 📂 Cybersecurity Portfolio: [Repository](https://github.com/archisystem/cybersecurity-portfolio)
 
 ---
 
-## 📌 Note
-
-Большая часть материалов в этом репозитории создана в рамках практического обучения и лабораторных работ. Репозиторий постепенно обновляется по мере развития навыков в cybersecurity.
+> 🛡️ **Learning cybersecurity by building, breaking, analyzing, and understanding.**
 
